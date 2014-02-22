@@ -1,0 +1,11 @@
+
+
+.square{
+	display: none;
+	background-color:hsla(0, 5%, 27%, 0.7);
+	padding-left: 100px;
+	padding-right: 100px;
+	font-family: 'Raleway', sans-serif;
+
+	border:5px solid black;
+}

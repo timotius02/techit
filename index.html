@@ -1,99 +1,441 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<!-- saved from url=(0052)http://getbootstrap.com/2.3.2/examples/carousel.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TechIt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <!-- Le styles -->
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
 
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
 
-    <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 200px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 200px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 1000px;
+      padding: 0 20px;
+      margin-top: 100px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="../assets/js/html5shiv.js"></script>
     <![endif]-->
-  </head>
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://getbootstrap.com/2.3.2/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://getbootstrap.com/2.3.2/assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://getbootstrap.com/2.3.2/assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="http://getbootstrap.com/2.3.2/assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="http://getbootstrap.com/2.3.2/assets/ico/favicon.png">
+  <style type="text/css"></style><style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style></head>
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="Carousel.html">Tech It</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="http://getbootstrap.com/2.3.2/examples/carousel.html#" class="dropdown-toggle" data-toggle="dropdown">Programs <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="listing.html?type=programs">Learn some skills</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header"></li>
+                    <li><a href="post.html?type=programs">Post an opportunity</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+			            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="Carousel.html" class="dropdown-toggle" data-toggle="dropdown">Internships <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="listing.html?type=internships">Improve your skills</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header"></li>
+                    <li><a href="post.html?type=internships">Post an opportunity</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+						            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="http://getbootstrap.com/2.3.2/examples/carousel.html#" class="dropdown-toggle" data-toggle="dropdown">Jobs <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="listing.html?type=jobs">Apply your skills</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header"></li>
+                    <li><a href="post.html?type=jobs">Post an opening</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+			<!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="./Carousel_files/slide-01.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>No technology classes at school?</h1>
+              <p class="lead">Shuffle through our programs offering education outside of the classroom.</p>
+            </div>
+          </div>
         </div>
-        <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
+        <div class="item">
+          <img src="./Carousel_files/slide-02.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Have some skills and want to gain some experience?</h1>
+              <p class="lead">Browse our internship postings to potentially improve your skillset and abilities.</p>
             </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+          </div>
+        </div>
+        <div class="item">
+          <img src="./Carousel_files/slide-03.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Looking for experienced employees?</h1>
+              <p class="lead">Post a job opportunity for one or more open positions in your company. </p>
             </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
+          </div>
+        </div>
       </div>
-    </div>
+    </div><!-- /.carousel -->
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
-    </div> <!-- /container -->
+        <div class="span4">
+          <img class="img-circle" src="img1.png" alt="140x140" style="width: 140px; height: 140px;">
+          <br><br><a href="listing.html?type=programs" class="btn btn-large btn-primary">Programs</a><br><br>
+          <p>If students aren't able to expand their technological interests in school, there are a variety of outside programs present to help aid their learning experiences.</p>
+          
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" src="img2.jpg" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;">
+          <br><br><a href="listing.html?type=internships" class="btn btn-large btn-primary">Internships</a><br><br>
+          <p>If you have some programming skills already, find opportunities to apply them to! Improve your skills with an experience that can allow you to gain knowledge in a professional setting.</p>
+          
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" src="img3.jpg" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;">
+          <br><br><a href="listing.html?type=jobs" class="btn btn-large btn-primary">Jobs</a><br><br>
+          <p>Find the perfect technological position fit for your skills. Browse through openings posted by corporations and start-ups eager to find employees like you.</p>
+          
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
 
 
-    <!-- Bootstrap core JavaScript
+      <!-- START THE FEATURETTES -
+
+
+
+
+
+
+    <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="bootstrap.min.js"></script>
-  </body>
-</html>
+    <script src="./Carousel_files/jquery.js"></script>
+    <script src="./Carousel_files/bootstrap-transition.js"></script>
+    <script src="./Carousel_files/bootstrap-alert.js"></script>
+    <script src="./Carousel_files/bootstrap-modal.js"></script>
+    <script src="./Carousel_files/bootstrap-dropdown.js"></script>
+    <script src="./Carousel_files/bootstrap-scrollspy.js"></script>
+    <script src="./Carousel_files/bootstrap-tab.js"></script>
+    <script src="./Carousel_files/bootstrap-tooltip.js"></script>
+    <script src="./Carousel_files/bootstrap-popover.js"></script>
+    <script src="./Carousel_files/bootstrap-button.js"></script>
+    <script src="./Carousel_files/bootstrap-collapse.js"></script>
+    <script src="./Carousel_files/bootstrap-carousel.js"></script>
+    <script src="./Carousel_files/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel({
+		    interval: 2800
+		  })
+        })
+      }(window.jQuery)
+    </script>
+    <script src="./Carousel_files/holder.js"></script>
+  
+
+</body></html>

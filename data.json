@@ -1,0 +1,44 @@
+{
+    "internships": [{
+        "name": "Microsoft internship",
+        "company": "Microsoft",
+        "location": "11 times square",
+        "duration": "2 months",
+        "description": "Microsoft welcomes young developers to their offices!"
+    }, {
+        "name": "Google internship",
+        "company": "Google",
+        "location": "NYC",
+        "duration": "4 months",
+        "description": "Google it!"
+    }],
+    "programs": [{
+        "name": "NYC Generation Tech",
+        "company": "NFTE x EDC",
+        "location": "NYC",
+        "duration": "2 months",
+        "description": "Provides hands-on learning experiences and mentorship opportunities for New York City high school students interested in transforming the world through tech-based innovations."
+    }, {
+        "name": "CSTUY",
+        "company": "none",
+        "location": "nyc",
+        "duration": "3 months",
+        "description": "Welcome to CSTUY an organization dedicated to bringing exciting opportunities in computer science and technology to middle and high school students."
+    }],
+    "jobs": [{
+        "name": "Web Developer Needed",
+        "company": "Microsoft",
+        "location": "11 times square",
+        "duration": "none",
+        "description": "Web developer needed for new ventures to mobile development. Must know Objective-C."
+
+    }, {
+
+        "name": "Web designer wanted",
+        "company": "Startup.us",
+        "location": "nyc",
+        "duration": "none",
+        "description": "Savvy web designer needed for new and exciting entrepeneurship venture. Must like cats."
+    }]
+
+}
